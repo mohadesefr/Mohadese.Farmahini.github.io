@@ -158,7 +158,7 @@ header {
     z-index: 99;
   }
 }
-.container .header #burger-menu:checked + .navigation-list {
+.container .header #burger-menu:checked ~ .navigation-list {
   right: 0;
 }
 
@@ -191,7 +191,7 @@ header {
 @media screen and (max-width: 1024px) {
   .hero-container {
     justify-content: space-around;
-    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -276,10 +276,11 @@ header {
   text-transform: uppercase;
   font-weight: 700;
   color: #fff;
+  transition: 0.4s;
 }
 .hero-btn > button:hover {
-  background-color: #F0B9EA;
-  color: #FECF77;
+  background-color: #D09CFA;
+  color: #fff;
 }
 
 .section {
@@ -302,12 +303,12 @@ header {
 .titles .section-title::before {
   content: "";
   display: block;
-  width: 30px;
+  width: 50px;
   height: 3px;
   background-color: #FECF77;
   position: absolute;
   bottom: 0;
-  right: calc(50% - 15px);
+  right: calc(50% - 25px);
 }
 .titles .section-title::after {
   content: "";
@@ -398,4 +399,167 @@ header {
 
 .title-info {
   margin-right: 8px;
+}
+
+.history-text {
+  text-align: center;
+  position: relative;
+}
+
+.history-box-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 24px;
+  margin-top: 24px;
+}
+.history-box-container .history-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.history-box-container .history-box > i {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FECF77;
+  border: 1px solid #FECF77;
+  text-align: center;
+  line-height: 39.5px;
+  font-size: 20px;
+  display: block;
+}
+.history-box-container .history-box > span {
+  margin-top: 16px;
+  font-weight: bold;
+}
+.history-box-container .history-box > p {
+  font-size: 12px;
+}
+@media screen and (max-width: 768px) {
+  .history-box-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+  }
+  .history-box-container .history-box {
+    margin-top: 24px;
+  }
+}
+
+.progress-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 32px;
+  width: 100%;
+  padding-right: 32px;
+  padding-left: 32px;
+}
+.progress-container .title-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+@media screen and (max-width: 1010px) {
+  .progress-container {
+    grid-template-columns: 100%;
+  }
+}
+
+.title-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #FECF77;
+  border: 1px solid #FECF77;
+  text-align: center;
+  line-height: 79.5px;
+  font-size: 20px;
+  display: block;
+  margin-right: 16px;
+}
+.title-logo .title-skil {
+  text-transform: uppercase;
+}
+@media screen and (max-width: 425px) {
+  .title-logo .title-skil {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .title-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #FECF77;
+    border: 1px solid #FECF77;
+    text-align: center;
+    line-height: 55.5px;
+    font-size: 20px;
+    display: block;
+  }
+}
+
+.progress {
+  width: 100%;
+}
+.progress .progress-line {
+  display: block;
+  width: 320px;
+  height: 32px;
+  background-color: #eaf0fc;
+  position: relative;
+}
+.progress .progress-line > div {
+  background-color: #D09CFA;
+  height: 32px;
+}
+@media screen and (max-width: 1010px) {
+  .progress .progress-line {
+    width: 100%;
+  }
+}
+.progress .progress-skil {
+  text-transform: capitalize;
+}
+@media screen and (max-width: 425px) {
+  .progress .progress-skil {
+    font-size: 14px;
+  }
+}
+
+.portfolio-subtitle {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-top: 16px;
+}
+.portfolio-subtitle li:hover {
+  color: #FECF77;
+}
+
+.my-project {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.my-project > div {
+  width: 33.3333333333%;
+}
+.my-project .img-project {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

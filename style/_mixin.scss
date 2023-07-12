@@ -4,7 +4,7 @@
   margin-left: auto;
   padding-left: $spacer * 2;
   padding-right: $spacer * 2;
-  
+
   @media (min-width: 320px) {
     max-width: 100%;
   }
@@ -57,10 +57,10 @@
   text-transform: uppercase;
   font-weight: 700;
   color: $text-light-color;
-
+  transition:$transition ;
   &:hover {
     background-color: $bg-hover-color;
-    color: $background;
+    color: $text-light-color;
   }
 }
 
@@ -72,12 +72,12 @@
   &::before {
     content: "";
     display: block;
-    width: 30px;
+    width: 50px;
     height: 3px;
     background-color: $primary_color;
     position: absolute;
     bottom: 0;
-    right: calc(50% - 15px);
+    right: calc(50% - 25px);
   }
 
   &::after {
@@ -88,4 +88,28 @@
     background-color: #ddd;
     margin-top: $spacer * 2;
   }
+}
+
+@mixin icon(
+  $background: $primary-color,
+  $bg-hover-color: $secondary-color,
+  $width: $spacer * 5,
+  $height: $spacer * 5
+) {
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+  background-color: $background;
+  border: 1px solid $background;
+  text-align: center;
+  line-height: calc($width - 0.5px);
+  font-size: $spacer * 2.5;
+  display: block;
+}
+
+
+@mixin grid($col: 2, $width: 1fr, $gap:0) {
+  display: grid;
+  grid-template-columns: repeat($col, $width);
+  grid-gap: $gap;
 }

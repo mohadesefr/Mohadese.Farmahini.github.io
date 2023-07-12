@@ -21,7 +21,7 @@
 
   @media screen and (max-width: 1024px) {
     justify-content: space-around;
-  width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -52,7 +52,7 @@
     font-size: $spacer * 2.5;
   }
   @media screen and (max-width: 1024px) {
-  width: auto;
+    width: auto;
   }
 }
 

@@ -67,11 +67,9 @@ header {
     }
 
     // why????
-    #burger-menu:checked + .navigation-list {
+    #burger-menu:checked  ~ .navigation-list {
       right: 0;
     }
   }
-  // @media (min-width: 567px) {
-  //   max-width: 100%;
-  // }
 }
+
