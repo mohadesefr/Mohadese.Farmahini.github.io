@@ -1,0 +1,30 @@
+.portfolio-subtitle {
+  width: 100%;
+  @include row($justify: center);
+  gap: $spacer * 4;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-top: $spacer * 2;
+
+  li:hover {
+    color: $primary-color;
+  }
+}
+
+.my-project {
+  width: 100%;
+  // @include grid($col: 3, $gap: $spacer * 3);
+  // grid-template-rows: repeat(2, 1fr);
+  @include row();
+  margin-top: $spacer * 3;
+
+  & > div {
+    width: calc(100% / 3 );
+
+  }
+  .img-project{
+    width: 100%;
+    // grid-row: 1,2;
+    // grid-column: 1,2;
+  }
+}

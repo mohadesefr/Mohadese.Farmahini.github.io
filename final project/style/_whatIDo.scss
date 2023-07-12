@@ -1,0 +1,32 @@
+.history-text {
+  text-align: center;
+  position: relative;
+}
+
+.history-box-container {
+  @include grid($gap: $spacer * 3, $col: 4);
+  margin-top: $spacer * 3;
+  
+  .history-box {
+    @include column($align: center);
+    & > i {
+      @include icon();
+    }
+
+    & > span {
+      margin-top: $spacer * 2;
+      font-weight: bold;
+    }
+    & > p {
+      font-size: $spacer * 1.5;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+
+    .history-box {
+      margin-top: $spacer * 3;
+    }
+  }
+}
