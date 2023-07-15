@@ -1,0 +1,18 @@
+.footer {
+  @include row($justify: space-between, $align: center);
+}
+
+.social-icon {
+  @include row();
+  gap: $spacer * 1.5;
+
+  .social {
+    @include icon();
+    background-color: $primary-color;
+
+    &:hover {
+        background: transparent;
+
+    }
+  }
+}

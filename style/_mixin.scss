@@ -49,18 +49,21 @@
   color: #7f7f7f;
 }
 
-@mixin button($background: $primary_color, $bg-hover-color: $secondary-color) {
+@mixin button($background: $primary_color, $bg-hover-color: $hover-color-btn) {
   background-color: $background;
   border-radius: $spacer;
   border: 1px solid $background;
+  border-radius: $spacer * 6;
   padding: $spacer * 1.5 $spacer * 2;
   text-transform: uppercase;
   font-weight: 700;
-  color: $text-light-color;
-  transition:$transition ;
+  color: $body-color;
+  transition:all $transition;
+
   &:hover {
     background-color: $bg-hover-color;
-    color: $text-light-color;
+    color: $body-color;
+    border: 1px solid $bg-hover-color;
   }
 }
 
@@ -107,8 +110,7 @@
   display: block;
 }
 
-
-@mixin grid($col: 2, $width: 1fr, $gap:0) {
+@mixin grid($col: 2, $width: 1fr, $gap: 0) {
   display: grid;
   grid-template-columns: repeat($col, $width);
   grid-gap: $gap;

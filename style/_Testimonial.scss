@@ -1,0 +1,42 @@
+.Testimonials-slider {
+  padding: $spacer * 2 $spacer * 1.5;
+}
+
+.Testimonials-card {
+  max-width: $spacer * 87.5;
+  box-shadow: 2px 3px 10px rgba(206, 212, 218, 0.3);
+  border-radius: $spacer / 2;
+  margin-right: auto;
+  margin-left: auto;
+  padding: $spacer * 2.5 $spacer * 2;
+  border: 1px solid #dee2e6;
+  text-align: center;
+
+  & > img {
+    width: $spacer * 10;
+    height: $spacer * 10;
+    border-radius: 50%;
+    box-shadow: 2px 3px 10px rgba(206, 212, 218, 0.3);
+    margin-bottom: $spacer * 4;
+  }
+  .text-slider {
+    margin-bottom: $spacer * 4;
+
+    .quote-icon {
+      display: inline;
+      font-size: $spacer * 3;
+      color: $primary-color;
+    }
+    & > p {
+      display: inline;
+    }
+  }
+  & > h4 {
+    margin-bottom: $spacer / 2;
+    font-size: $spacer * 2.5;
+  }
+  & > h5 {
+    margin-bottom: $spacer / 2;
+    opacity: 0.8;
+  }
+}
