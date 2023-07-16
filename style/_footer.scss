@@ -1,5 +1,19 @@
+#footer {
+  background-color: #f7f8f9;
+}
+
 .footer {
   @include row($justify: space-between, $align: center);
+  padding: $spacer * 8 0;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: $spacer * 2;
+  }
+
+  .copyright{
+    text-align: center
+  }
 }
 
 .social-icon {
@@ -11,8 +25,7 @@
     background-color: $primary-color;
 
     &:hover {
-        background: transparent;
-
+      background: transparent;
     }
   }
 }

@@ -6,11 +6,28 @@
     <!-- css link -->
     <link rel="stylesheet" href="style/aos.css" />
     <link rel="stylesheet" href="style/style.css" />
+    <!-- <link rel="stylesheet" href="style/loading.css"> -->
+
     <link rel="stylesheet" href="style/line-awesome.min.css" />
     <title>Mohadese Farmahini | Front Developer</title>
   </head>
 
   <body>
+    <!-- start loading animation -->
+    <!-- <div id="container">
+      <div class="divider" aria-hidden="true"></div>
+      <p class="loading-text" aria-label="Loading">
+        <span class="letter" aria-hidden="true">L</span>
+        <span class="letter" aria-hidden="true">o</span>
+        <span class="letter" aria-hidden="true">a</span>
+        <span class="letter" aria-hidden="true">d</span>
+        <span class="letter" aria-hidden="true">i</span>
+        <span class="letter" aria-hidden="true">n</span>
+        <span class="letter" aria-hidden="true">g</span>
+      </p>
+    </div> -->
+    <!-- end loading animation -->
+
     <!-- start header -->
     <header>
       <div class="container">
@@ -299,22 +316,24 @@
 
           <div class="Testimonials-slider">
             <div class="Testimonials-card">
-              <img src="assets/testimonials-1.jpeg" alt="" />
+              <img
+                class="testimonial-img"
+                id="testimonial-img"
+                src=""
+                alt="testimonial image"
+              />
 
-              <div class="text-slider">
+              <div class="testimonial-quote">
                 <i class="las la-quote-left quote-icon"></i>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                  necessitatibus explicabo
-                </p>
+                <p id="testimonial-text"></p>
                 <i class="las la-quote-right quote-icon"></i>
               </div>
 
-              <h4>Emma Re</h4>
-              <h5>Graphic Designer</h5>
+              <h4 id="testimonial-name"></h4>
+              <h5 id="testimonial-job"></h5>
             </div>
           </div>
-          <div>
+          <div class="slider-icon-container">
             <i class="las la-circle slider-icon"></i>
             <i class="las la-circle slider-icon"></i>
             <i class="las la-circle slider-icon"></i>
@@ -323,19 +342,55 @@
         </div>
       </section>
       <!-- end Testimonials section -->
+
+      <!-- start contact section -->
+      <section id="Contact">
+        <div class="container section">
+          <div class="titles">
+            <h2 class="section-title">Get In Touch With Me</h2>
+          </div>
+
+          <div class="contact-container">
+            <div class="map-img">
+              <img src="assets/map.png" alt="map" />
+            </div>
+
+            <form action="" class="form">
+              <input class="name-input" type="text" placeholder="your name" />
+              <input class="email-input" type="text" placeholder="your Email" />
+              <input class="subject-input" type="text" placeholder="subject" />
+              <textarea
+                name="contact-message"
+                class="message-input"
+                placeholder="Message"                
+              ></textarea>
+              <input class="submit-input" type="submit" value="send message" />
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- end contact section -->
     </main>
 
-    <footer>
+    <footer id="footer">
       <div class="container section footer">
-        <div>© Copyright <strong>MyResume</strong>. All Rights Reserved</div>
+        <div class="copyright">© Copyright <strong>MyResume</strong>. All Rights Reserved</div>
         <div class="social-icon">
-          <a class="social" href="https://ir.linkedin.com/in/mohadese-farmahini-9359a51b5">
+          <a
+            class="social"
+            href="https://ir.linkedin.com/in/mohadese-farmahini-9359a51b5"
+            target="”_blank”"
+          >
             <i class="lab la-linkedin"></i
           ></a>
-          <a class="social" href="http://t.me/haniashop98"
+          <a class="social" href="http://t.me/haniashop98" target="”_blank”"
             ><i class="lab la-telegram"></i
           ></a>
-          <a class="social" href="https://github.com/mohadesefr">
+          <a
+            class="social"
+            href="https://github.com/mohadesefr"
+            target="”_blank”"
+          >
             <i class="lab la-github"></i
           ></a>
         </div>

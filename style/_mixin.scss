@@ -51,7 +51,6 @@
 
 @mixin button($background: $primary_color, $bg-hover-color: $hover-color-btn) {
   background-color: $background;
-  border-radius: $spacer;
   border: 1px solid $background;
   border-radius: $spacer * 6;
   padding: $spacer * 1.5 $spacer * 2;

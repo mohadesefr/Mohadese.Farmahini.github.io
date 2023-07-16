@@ -1,3 +1,12 @@
+// .................start loading Animation
+// window.addEventListener('load', () => {
+//   const loader = document.getElementById('container');
+// })
+// .................end loading Animation
+
+
+
+
 // .................start portfolio js
 
 const title = [
@@ -63,7 +72,10 @@ const addSubjects = () => {
 
   // add titles to html code
   let finalSubjects = subject.map(
-    (s) => `<li class="title-style sub-title ${s === 'all' ? 'active-subject' : ''}" subject-id="${s}"> ${s} </li>`
+    (s) =>
+      `<li class="title-style sub-title ${
+        s === "all" ? "active-subject" : ""
+      }" subject-id="${s}"> ${s} </li>`
   );
   console.log(finalSubjects);
 
@@ -77,8 +89,8 @@ const addSubjects = () => {
     const subjectName = item.getAttribute("subject-id");
 
     item.addEventListener("click", function () {
-      item.classList.add('active-subject');
-      setActiveClass(item)
+      item.classList.add("active-subject");
+      setActiveClass(item);
 
       if (subjectName === "all") {
         addPicture(title);
@@ -96,3 +108,54 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // .................end portfolio js
+
+// .................start slider js
+const clients = [
+  {
+    id: 1,
+    img: "assets/testimonials-1.jpeg",
+    name: "Sara Wilsson",
+    position: "Designer",
+    quote:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus explicabo.",
+  },
+  {
+    id: 2,
+    img: "assets/testimonials-3.jpeg",
+    name: "Jena Karlis",
+    position: "Store Owner",
+    quote:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus explicabo.",
+  },
+  {
+    id: 3,
+    img: "assets/testimonials-5.jpeg",
+    name: "John Larson",
+    position: "Entrepreneur",
+    quote:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus explicabo.",
+  },
+  {
+    id: 4,
+    img: "assets/testimonials.jpeg",
+    name: "Saul Goodman",
+    position: "Ceo & Founder",
+    quote:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus explicabo.",
+  },
+];
+
+const clientImg = document.getElementById("testimonial-img");
+const clientName = document.getElementById("testimonial-name");
+const clientJop = document.getElementById("testimonial-job");
+const clientQuote = document.getElementById("testimonial-text");
+
+document.addEventListener("DOMContentLoaded", function () {
+  const firstClient = clients[0];
+  clientImg.src = firstClient.img;
+  clientName.textContent = firstClient.name;
+  clientJop.textContent = firstClient.position;
+  clientQuote.textContent = firstClient.quote;
+});
+
+// .................end slider js

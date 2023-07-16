@@ -1,0 +1,124 @@
+.contact-container {
+  position: relative;
+  @include row();
+  gap: 5%;
+  padding: $spacer * 8 0;
+  width: 100%;
+
+  &::before {
+    content: "";
+    width: 80%;
+    display: block;
+    height: auto;
+    border: 10px solid $primary-color;
+    position: absolute;
+    inset: 0px 75px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: 992px) {
+      height: 85%;
+      margin-top: auto;
+      margin-bottom: auto;
+      inset: 75px 0;
+    }
+    @media screen and (max-width: 566px) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+.map-img {
+  width: 50%;
+  z-index: 2;
+  & > img {
+    width: 100%;
+    box-shadow: 5px 8px 30px 1px rgba(0, 0, 0, 0.21);
+  }
+  @media screen and (max-width: 566px) {
+    width: 100%;
+  }
+}
+
+form {
+  width: calc(50% - 5%);
+  padding: $spacer * 2 0;
+  background-color: $bg-color;
+  @include row($justify: space-between);
+  gap: 5%;
+  z-index: 1;
+
+  & > * {
+    text-transform: capitalize;
+    font-size: $spacer * 2;
+    padding-left: $spacer * 2;
+    font-weight: 400;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    line-height: 1.2;
+    transition: border-color $transition;
+  }
+
+  & > *:not(:last-child):focus {
+    border-color: $primary-color;
+    color: $body-color;
+    background-color: $bg-color;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 122, 87, 0.25);
+  }
+  .name-input {
+    width: calc(50% - 2.5%);
+    height: $spacer * 5;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  .email-input {
+    width: calc(50% - 2.5%);
+    height: $spacer * 5;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      margin-top: $spacer * 2.5;
+    }
+  }
+  .subject-input {
+    width: 100%;
+    height: $spacer * 5;
+    margin-top: $spacer * 2.5;
+  }
+  .message-input {
+    width: 100%;
+    height: $spacer * 18;
+    margin: $spacer * 2.5 0 $spacer * 4 0;
+    font-family: $font_family;
+    padding-top: $spacer * 1.5;
+  }
+
+  .submit-input {
+    @include button();
+    margin-left: auto;
+    padding-left: $spacer * 6;
+    padding-right: $spacer * 6;
+    text-transform: capitalize;
+    cursor: pointer;
+    @media screen and (max-width: 992px) {
+      margin-right: auto;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    padding: 0 $spacer * 2;
+    margin-bottom: $spacer * 5;
+    width: 60%;
+  }
+  @media screen and (max-width: 566px) {
+    width: 100%;
+  }
+}
