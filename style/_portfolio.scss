@@ -17,12 +17,12 @@
 
 .my-project {
   width: 100%;
-
-  @include row();
+  @include row($justify:center);
   margin-top: $spacer * 3;
+  gap: $spacer * 2.5;
 
   & > div {
-    width: calc(100% / 3);
+    width: calc(100% / 3 - $spacer * 2.5);
     @media screen and (max-width: 768px) {
       width: calc(100% / 2);
     }
@@ -30,21 +30,37 @@
       width: 100%;
     }
   }
-  .img-project {
-    width: 100%;
+}
+
+.img-project {
+  width: 100%;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform $transition;
+
+  &:hover {
+    transform: scale(1.1);
+    border: 2px solid $primary-color;
+  }
+ 
+}
+
+.slider-icon-container {
+  font-size: $spacer * 3;
+  & > i:hover {
+    color: $primary-color;
   }
 }
 
-
 // hire me section
-.hire-me{
+.hire-me {
   @include row($justify: space-between, $align: center);
   padding: $spacer * 2;
   background-color: $primary-color;
   border-radius: $spacer;
-  
+
   & > div {
-    h4{
+    h4 {
       padding: $spacer * 2 0 $spacer;
       margin: 0;
       font-size: $spacer * 2.5;
@@ -66,7 +82,3 @@
     text-align: center;
   }
 }
-
-
-// padding-right: $spacer * 2;
-//   padding-left:  $spacer * 2;

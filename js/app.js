@@ -1,11 +1,36 @@
+// .................start dark theme
+let darkBtn = document.getElementById("dark-btn");
+let btnDarkText = document.getElementById("btn-dark-text");
+let btnDarkIcon = document.getElementById("btn-dark-icon");
+let bgDark = document.getElementById("dark-theme");
+let textDark = document.querySelectorAll('li > a');
+let form = document.getElementById('form');
+
+darkBtn.onclick = function () {
+  document.body.classList.toggle("dark-theme");
+
+  if (document.body.classList.contains("dark-theme")) {
+
+    btnDarkIcon.src = "assets/sun.png";
+    btnDarkText.innerHTML = "Light";
+    bgDark.classList.add("dark-bg");
+    textDark.classList.add('dark-content');
+    form.classList.add('form-bg-dark');
+    
+  } else {
+    btnDarkIcon.src = "assets/moon.png";
+    btnDarkText.innerHTML = "Dark";
+    bgDark.classList.remove("dark-bg");
+  }
+};
+// .................end dark theme
+
+
 // .................start loading Animation
 // window.addEventListener('load', () => {
 //   const loader = document.getElementById('container');
 // })
 // .................end loading Animation
-
-
-
 
 // .................start portfolio js
 
@@ -34,6 +59,11 @@ const title = [
     num: 5,
     sub: "css",
     img: "assets/mianterm.jpg",
+  },
+  {
+    num:6,
+    sub: 'bootstrap',
+    img: 'assets/fullstack.jpg',
   },
 ];
 
@@ -150,12 +180,41 @@ const clientName = document.getElementById("testimonial-name");
 const clientJop = document.getElementById("testimonial-job");
 const clientQuote = document.getElementById("testimonial-text");
 
+let currentClient = 0;
+
+const setSlideData = (clientIndex) => {
+  const client = clients[clientIndex];
+  clientImg.src = client.img;
+  clientName.textContent = client.name;
+  clientJop.textContent = client.position;
+  clientQuote.textContent = client.quote;
+};
+
 document.addEventListener("DOMContentLoaded", function () {
-  const firstClient = clients[0];
-  clientImg.src = firstClient.img;
-  clientName.textContent = firstClient.name;
-  clientJop.textContent = firstClient.position;
-  clientQuote.textContent = firstClient.quote;
+  setSlideData(0);
 });
+
+// button click
+document.getElementById("next-slide").addEventListener("click", function () {
+  if (currentClient >= 0 && currentClient < clients.length - 1) {
+    currentClient++;
+    setSlideData(currentClient);
+  } else if (currentClient >= clients.length - 1) {
+    currentClient = 0;
+    setSlideData(currentClient);
+  }
+});
+
+document
+  .getElementById("Previous-slide")
+  .addEventListener("click", function () {
+    if (currentClient > 0) {
+      currentClient--;
+      setSlideData(currentClient);
+    } else {
+      currentClient = clients.length - 1;
+      setSlideData(currentClient);
+    }
+  });
 
 // .................end slider js

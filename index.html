@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- css link -->
-    <link rel="stylesheet" href="style/aos.css" />
-    <link rel="stylesheet" href="style/style.css" />
-    <!-- <link rel="stylesheet" href="style/loading.css"> -->
-
     <link rel="stylesheet" href="style/line-awesome.min.css" />
+    <link rel="stylesheet" href="style/animate.min.css" />
+    <link rel="stylesheet" href="style/style.css" />
+
     <title>Mohadese Farmahini | Front Developer</title>
   </head>
 
@@ -30,8 +29,8 @@
 
     <!-- start header -->
     <header>
-      <div class="container">
-        <div class="header">
+      <div class="header-fixed" id="dark-theme">
+        <div class="container header">
           <div>
             <h3 id="logo">Mohiiixx</h3>
           </div>
@@ -40,13 +39,18 @@
           <input type="checkbox" id="burger-menu" />
 
           <nav class="navigation-list">
-            <ul class="navigation">
-              <li><a href="#Home">Home</a></li>
-              <li><a href="#About">About</a></li>
+            <ul class="navigation " >
+              <li><a class="dark-text" href="#Home">Home</a></li>
+              <li><a  href="#About">About</a></li>
               <li><a href="#Resume">Resume</a></li>
               <li><a href="#Portfolio">Portfolio</a></li>
               <li><a href="#Contact">Contact</a></li>
+              <div id="dark-btn">
+                <span id="btn-dark-text">Dark</span>
+                <img id="btn-dark-icon" src="assets/moon.png" alt="moon" />
+              </div>
             </ul>
+           
           </nav>
         </div>
       </div>
@@ -90,11 +94,11 @@
           </div>
 
           <div class="info-container">
-            <div class="prof-img">
+            <div class="prof-img wow animate__animated animate__fadeInLeft">
               <img src="assets/430.jpg" alt="profile photo" />
             </div>
 
-            <div class="prof-info">
+            <div class="prof-info wow animate__animated animate__fadeInRight">
               <h3>Who Am I?</h3>
               <p class="history-text">
                 I’m Mohadese Farmahini, a front-end web developer. I've been
@@ -139,13 +143,15 @@
           </div>
 
           <div>
-            <p class="history-text">
+            <p class="history-text animate__fadeInUp animate__animated wow">
               here is what i've done in these years. Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Porro doloribus eligendi, ex beatae
               dolores inventore tempora voluptatibus ea opti!
             </p>
 
-            <div class="history-box-container">
+            <div
+              class="history-box-container animate__fadeInUp animate__animated wow animate__delay-1s"
+            >
               <div class="history-box">
                 <i class="las la-smile"></i>
                 <span>232</span>
@@ -179,7 +185,7 @@
           </div>
 
           <div class="progress-container">
-            <div class="title-container">
+            <div class="title-container animate__animated animate__fadeIn wow">
               <div>
                 <div class="title-logo">
                   <p class="title-skil">psd</p>
@@ -194,7 +200,7 @@
               </div>
             </div>
 
-            <div class="title-container">
+            <div class="title-container animate__animated animate__fadeIn wow">
               <div>
                 <div class="title-logo">
                   <p class="title-skil">html</p>
@@ -209,7 +215,9 @@
               </div>
             </div>
 
-            <div class="title-container">
+            <div
+              class="title-container animate__animated animate__fadeIn wow animate__delay-1s"
+            >
               <div>
                 <div class="title-logo">
                   <p class="title-skil">css</p>
@@ -224,7 +232,9 @@
               </div>
             </div>
 
-            <div class="title-container">
+            <div
+              class="title-container animate__animated animate__fadeIn wow animate__delay-1s"
+            >
               <div>
                 <div class="title-logo">
                   <p class="title-skil">js</p>
@@ -239,7 +249,9 @@
               </div>
             </div>
 
-            <div class="title-container">
+            <div
+              class="title-container animate__animated animate__fadeIn wow animate__delay-2s"
+            >
               <div>
                 <div class="title-logo">
                   <p class="title-skil">seo</p>
@@ -254,7 +266,9 @@
               </div>
             </div>
 
-            <div class="title-container">
+            <div
+              class="title-container animate__animated animate__fadeIn wow animate__delay-2s"
+            >
               <div>
                 <div class="title-logo">
                   <p class="title-skil">figma</p>
@@ -280,13 +294,15 @@
             <h2 class="section-title">Portfolio</h2>
           </div>
 
-          <p class="history-text">
+          <p class="history-text animate__fadeInUp animate__animated wow">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
             cupiditate facilis eius sequi illo assumenda ipsum praesentium
             iusto.
           </p>
 
-          <div class="Portfolio-container">
+          <div
+            class="Portfolio-container animate__fadeInUp animate__animated wow animate__delay-1s"
+          >
             <ul class="portfolio-titles" id="portfolio-titles"></ul>
 
             <div class="my-project" id="my-project"></div>
@@ -314,7 +330,9 @@
             <h2 class="section-title">What People Say About Me</h2>
           </div>
 
-          <div class="Testimonials-slider">
+          <div
+            class="Testimonials-slider animate__zoomIn animate__animated wow"
+          >
             <div class="Testimonials-card">
               <img
                 class="testimonial-img"
@@ -333,11 +351,11 @@
               <h5 id="testimonial-job"></h5>
             </div>
           </div>
-          <div class="slider-icon-container">
-            <i class="las la-circle slider-icon"></i>
-            <i class="las la-circle slider-icon"></i>
-            <i class="las la-circle slider-icon"></i>
-            <i class="las la-circle slider-icon"></i>
+          <div
+            class="slider-icon-container animate__fadeIn animate__animated wow animate__delay-1s"
+          >
+            <i class="las la-chevron-circle-left" id="Previous-slide"></i>
+            <i class="las la-chevron-circle-right" id="next-slide"></i>
           </div>
         </div>
       </section>
@@ -350,19 +368,19 @@
             <h2 class="section-title">Get In Touch With Me</h2>
           </div>
 
-          <div class="contact-container">
+          <div class="contact-container animate__fadeIn animate__animated wow">
             <div class="map-img">
               <img src="assets/map.png" alt="map" />
             </div>
 
-            <form action="" class="form">
+            <form id="form" class="form">
               <input class="name-input" type="text" placeholder="your name" />
               <input class="email-input" type="text" placeholder="your Email" />
               <input class="subject-input" type="text" placeholder="subject" />
               <textarea
                 name="contact-message"
                 class="message-input"
-                placeholder="Message"                
+                placeholder="Message"
               ></textarea>
               <input class="submit-input" type="submit" value="send message" />
             </form>
@@ -374,7 +392,9 @@
 
     <footer id="footer">
       <div class="container section footer">
-        <div class="copyright">© Copyright <strong>MyResume</strong>. All Rights Reserved</div>
+        <div class="copyright">
+          © Copyright <strong>MyResume</strong>. All Rights Reserved
+        </div>
         <div class="social-icon">
           <a
             class="social"
@@ -397,7 +417,11 @@
       </div>
     </footer>
 
-    <script src="js/aos.js"></script>
+    <!-- script codes -->
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
     <script src="js/app.js"></script>
   </body>
 </html>

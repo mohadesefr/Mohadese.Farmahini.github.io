@@ -1,28 +1,39 @@
-html, body {
+html,
+body {
   font-family: $font_family;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  color: $body-color;
+  color: $text-dark-color;
+  background-color: $bg-color;
+  transition: background-color $transition * 2;
+}
+.dark-theme {
+  background-color: $bg-dark-theme;
+  color: $text-light-color;
 }
 
 a {
   text-decoration: none;
-  color: $body-color;
+  color: $text-dark-color;
 }
 
 li {
   list-style-type: none;
 }
-h1,h2,h3,h4,h5,h6 {
-	margin-bottom: $spacer * 3;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: $spacer * 3;
   line-height: 1.2;
   font-weight: 500;
 }
 
-p{
+p {
   margin-bottom: 12px;
-  letter-spacing: .6px;
+  letter-spacing: 0.6px;
   font-weight: 400;
 }
-

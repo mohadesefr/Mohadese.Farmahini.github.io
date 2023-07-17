@@ -48,7 +48,7 @@
 
 form {
   width: calc(50% - 5%);
-  padding: $spacer * 2 0;
+  padding: $spacer * 2;
   background-color: $bg-color;
   @include row($justify: space-between);
   gap: 5%;
@@ -68,7 +68,7 @@ form {
 
   & > *:not(:last-child):focus {
     border-color: $primary-color;
-    color: $body-color;
+    color: $text-dark-color;
     background-color: $bg-color;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(255, 122, 87, 0.25);
@@ -121,4 +121,8 @@ form {
   @media screen and (max-width: 566px) {
     width: 100%;
   }
+}
+
+.form-bg-dark {
+  background-color: #393E46 !important;
 }
