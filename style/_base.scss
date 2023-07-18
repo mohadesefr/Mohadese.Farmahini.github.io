@@ -8,6 +8,10 @@ body {
   background-color: $bg-color;
   transition: background-color $transition * 2;
 }
+html {
+  scroll-behavior: smooth;
+
+}
 .dark-theme {
   background-color: $bg-dark-theme;
   color: $text-light-color;
@@ -37,3 +41,4 @@ p {
   letter-spacing: 0.6px;
   font-weight: 400;
 }
+

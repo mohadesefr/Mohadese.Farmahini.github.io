@@ -39,12 +39,15 @@
           <input type="checkbox" id="burger-menu" />
 
           <nav class="navigation-list">
-            <ul class="navigation " >
-              <li><a class="dark-text" href="#Home">Home</a></li>
-              <li><a  href="#About">About</a></li>
-              <li><a href="#Resume">Resume</a></li>
-              <li><a href="#Portfolio">Portfolio</a></li>
-              <li><a href="#Contact">Contact</a></li>
+            <ul class="navigation" >
+
+              <li ><a class="dark-text nav-link Home active" href="#Home">Home</a></li>
+              <li ><a class="nav-link About" href="#About">About</a></li>
+              <li ><a class="nav-link Resume" href="#Resume">Resume</a></li>
+              <li ><a class="nav-link Portfolio" href="#Portfolio">Portfolio</a></li>
+              <li ><a class="nav-link Testimonial" href="#Testimonial">Testimonial</a></li>
+              <li ><a class="nav-link Contact" href="#Contact">Contact</a></li>
+
               <div id="dark-btn">
                 <span id="btn-dark-text">Dark</span>
                 <img id="btn-dark-icon" src="assets/moon.png" alt="moon" />
@@ -68,14 +71,14 @@
             </div>
 
             <div class="hero-btn">
-              <button>get in touch</button>
+              <button><a target="" href="https://www.linkedin.com/in/mohadese-farmahini-9359a51b5?originalSubdomain=ir">get in touch</a></button>
             </div>
           </div>
 
           <div class="img-holder">
             <img
               class="img-hero"
-              src="assets/hero-picture.jpg"
+              src="assets/girl-2.jpeg"
               alt="hero-img"
             />
           </div>
@@ -95,13 +98,13 @@
 
           <div class="info-container">
             <div class="prof-img wow animate__animated animate__fadeInLeft">
-              <img src="assets/430.jpg" alt="profile photo" />
+              <img src="assets/girl-1.jpeg" alt="profile photo" />
             </div>
 
             <div class="prof-info wow animate__animated animate__fadeInRight">
               <h3>Who Am I?</h3>
-              <p class="history-text">
-                I’m Mohadese Farmahini, a front-end web developer. I've been
+              <p class="about-text">
+                I'm Mohadese Farmahini, a front-end web developer. I've been
                 working for almost last 4 months.
               </p>
               <li>
@@ -181,14 +184,14 @@
 
         <div class="container section">
           <div class="titles">
-            <h2 class="section-title">My Skils</h2>
+            <h2 class="section-title">My Skills</h2>
           </div>
 
           <div class="progress-container">
-            <div class="title-container animate__animated animate__fadeIn wow">
+            <div class="title-container animate__animated animate__fadeInUp wow">
               <div>
                 <div class="title-logo">
-                  <p class="title-skil">psd</p>
+                  <p class="title-skill">psd</p>
                 </div>
               </div>
 
@@ -196,14 +199,14 @@
                 <div class="progress-line">
                   <div style="width: 70%"></div>
                 </div>
-                <div class="progress-skil">adobe photoshop</div>
+                <div class="progress-skill">adobe photoshop</div>
               </div>
             </div>
 
-            <div class="title-container animate__animated animate__fadeIn wow">
+            <div class="title-container animate__animated animate__fadeInUp wow">
               <div>
                 <div class="title-logo">
-                  <p class="title-skil">html</p>
+                  <p class="title-skill">html</p>
                 </div>
               </div>
 
@@ -216,11 +219,11 @@
             </div>
 
             <div
-              class="title-container animate__animated animate__fadeIn wow animate__delay-1s"
+              class="title-container animate__animated animate__fadeInUp wow animate__delay-1s"
             >
               <div>
                 <div class="title-logo">
-                  <p class="title-skil">css</p>
+                  <p class="title-skill">css</p>
                 </div>
               </div>
 
@@ -233,11 +236,11 @@
             </div>
 
             <div
-              class="title-container animate__animated animate__fadeIn wow animate__delay-1s"
+              class="title-container animate__animated animate__fadeInUp wow animate__delay-1s"
             >
               <div>
                 <div class="title-logo">
-                  <p class="title-skil">js</p>
+                  <p class="title-skill">js</p>
                 </div>
               </div>
 
@@ -250,11 +253,11 @@
             </div>
 
             <div
-              class="title-container animate__animated animate__fadeIn wow animate__delay-2s"
+              class="title-container animate__animated animate__fadeInUp wow animate__delay-2s"
             >
               <div>
                 <div class="title-logo">
-                  <p class="title-skil">seo</p>
+                  <p class="title-skill">seo</p>
                 </div>
               </div>
 
@@ -267,11 +270,11 @@
             </div>
 
             <div
-              class="title-container animate__animated animate__fadeIn wow animate__delay-2s"
+              class="title-container animate__animated animate__fadeInUp wow animate__delay-2s"
             >
               <div>
                 <div class="title-logo">
-                  <p class="title-skil">figma</p>
+                  <p class="title-skill">figma</p>
                 </div>
               </div>
 
@@ -312,7 +315,7 @@
         <!-- start hire me section  -->
         <div class="container section">
           <div class="hire-me">
-            <div>
+            <div class="hire-me-content">
               <h4>Hire Me For Your Project</h4>
               <p>i love chalenge and make a chngege</p>
             </div>
@@ -324,7 +327,7 @@
       <!-- end Portfolio section  -->
 
       <!-- start Testimonials section -->
-      <section>
+      <section id="Testimonial">
         <div class="container section">
           <div class="titles">
             <h2 class="section-title">What People Say About Me</h2>
@@ -368,18 +371,18 @@
             <h2 class="section-title">Get In Touch With Me</h2>
           </div>
 
-          <div class="contact-container animate__fadeIn animate__animated wow">
+          <div class="contact-container animate__fadeIn animate__animated wow animate__delay-1s">
             <div class="map-img">
               <img src="assets/map.png" alt="map" />
             </div>
 
             <form id="form" class="form">
-              <input class="name-input" type="text" placeholder="your name" />
-              <input class="email-input" type="text" placeholder="your Email" />
-              <input class="subject-input" type="text" placeholder="subject" />
+              <input class="name-input input" type="text" placeholder="your name" />
+              <input class="email-input input" type="text" placeholder="your Email" />
+              <input class="subject-input input" type="text" placeholder="subject" />
               <textarea
                 name="contact-message"
-                class="message-input"
+                class="message-input input"
                 placeholder="Message"
               ></textarea>
               <input class="submit-input" type="submit" value="send message" />
@@ -390,26 +393,26 @@
       <!-- end contact section -->
     </main>
 
-    <footer id="footer">
+    <footer id="footer" class="">
       <div class="container section footer">
-        <div class="copyright">
+        <div class="copyright" id="copyright">
           © Copyright <strong>MyResume</strong>. All Rights Reserved
         </div>
         <div class="social-icon">
           <a
             class="social"
             href="https://ir.linkedin.com/in/mohadese-farmahini-9359a51b5"
-            target="”_blank”"
+            target="_blank"
           >
             <i class="lab la-linkedin"></i
           ></a>
-          <a class="social" href="http://t.me/haniashop98" target="”_blank”"
+          <a class="social" href="http://t.me/haniashop98" target="_blank"
             ><i class="lab la-telegram"></i
           ></a>
           <a
             class="social"
             href="https://github.com/mohadesefr"
-            target="”_blank”"
+            target="_blank"
           >
             <i class="lab la-github"></i
           ></a>

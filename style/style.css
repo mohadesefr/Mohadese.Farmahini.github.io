@@ -15,9 +15,13 @@ body {
   transition: background-color 0.8s;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .dark-theme {
   background-color: #222831;
-  color: #fff;
+  color: #EEEEEE;
 }
 
 a {
@@ -47,7 +51,7 @@ p {
 }
 
 header {
-  height: calc(90vh - 16px);
+  height: calc(100vh - 16px);
 }
 
 .header-fixed {
@@ -117,6 +121,7 @@ header {
   position: relative;
   margin-left: auto;
   z-index: 100;
+  transition: 0.4s;
 }
 .header .toggle-btn > span {
   display: inline-block;
@@ -153,12 +158,13 @@ header {
   color: #7f7f7f;
   bottom: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .header .toggle-btn {
     display: none;
   }
 }
-.header .navigation-list .navigation {
+
+.navigation {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -168,26 +174,21 @@ header {
   gap: 16px;
   font-weight: 700;
   font-size: 13px;
+  transition: background-color 0.8s;
 }
-@media (max-width: 767px) {
-  .header .navigation-list .navigation {
-    display: flex;
+@media screen and (max-width: 1024px) {
+  .navigation {
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    padding: 96px;
-    width: 230px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: -230px;
-    bottom: 0;
-    z-index: 99;
   }
 }
-.header #burger-menu:checked ~ .navigation-list {
-  right: 0;
+
+.nav-link {
+  transition: color 0.4s;
+}
+
+.nav-link:hover,
+.active {
+  color: #FECF77;
 }
 
 .dark-bg {
@@ -195,7 +196,7 @@ header {
 }
 
 .dark-content {
-  color: #fff;
+  color: #EEEEEE;
 }
 
 #dark-btn {
@@ -229,6 +230,38 @@ header {
   margin-left: auto;
 }
 
+@media (max-width: 1024px) {
+  .navigation-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 0;
+    position: fixed;
+    top: 64px;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    transition: background-color 0.8s;
+    background-color: #ffffff;
+    box-shadow: 0 6px 15px rgba(206, 212, 218, 0.3);
+    overflow-y: hidden;
+  }
+  #burger-menu:checked + .navigation-list {
+    height: 280px;
+    transition: 0.4s;
+  }
+}
+.box-shadow {
+  box-shadow: 0 6px 15px rgba(206, 212, 218, 0.3);
+}
+
+.bg-dark-menu {
+  background-color: #222831;
+}
+
 .hero {
   height: 100%;
 }
@@ -240,15 +273,15 @@ header {
   justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
 }
 .hero-container .img-holder {
   width: 50%;
 }
 .hero-container .img-holder .img-hero {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media (max-width: 1024px) {
   .hero-container .img-holder {
@@ -306,7 +339,7 @@ header {
   padding-right: 8px;
   height: 30px;
   overflow: hidden;
-  animation: typing 3s steps(20);
+  animation: typing 4s steps(20) infinite;
 }
 .cursor .cursor-hero {
   width: 3px;
@@ -328,11 +361,14 @@ header {
   }
 }
 @keyframes typing {
-  from {
+  0% {
     width: 0;
   }
-  to {
-    width: auto;
+  80% {
+    width: 250px;
+  }
+  100% {
+    width: 250px;
   }
 }
 .hero-btn > button {
@@ -451,7 +487,12 @@ header {
     margin-top: 32px;
   }
 }
-.prof-info > p,
+@media screen and (max-width: 1020px) {
+  .prof-info .about-text {
+    text-align: center;
+  }
+}
+.prof-info .about-text,
 .prof-info .my-info {
   margin-bottom: 24px;
 }
@@ -471,8 +512,8 @@ header {
 }
 
 .history-text {
-  text-align: center;
   position: relative;
+  text-align: center;
 }
 
 .history-box-container {
@@ -551,11 +592,11 @@ header {
   display: block;
   margin-right: 16px;
 }
-.title-logo .title-skil {
+.title-logo .title-skill {
   text-transform: uppercase;
 }
 @media screen and (max-width: 425px) {
-  .title-logo .title-skil {
+  .title-logo .title-skill {
     font-size: 14px;
   }
 }
@@ -592,13 +633,17 @@ header {
     width: 100%;
   }
 }
-.progress .progress-skil {
+.progress .progress-skill {
   text-transform: capitalize;
 }
 @media screen and (max-width: 425px) {
-  .progress .progress-skil {
+  .progress .progress-skill {
     font-size: 14px;
   }
+}
+
+.dark-color-title {
+  color: #393E46;
 }
 
 .portfolio-titles {
@@ -632,16 +677,16 @@ header {
   margin-top: 24px;
   gap: 20px;
 }
-.my-project > div {
+.my-project .img-project-container {
   width: calc(33.3333333333% - 20px);
 }
-@media screen and (max-width: 768px) {
-  .my-project > div {
-    width: 50%;
+@media screen and (max-width: 1024px) {
+  .my-project .img-project-container {
+    width: calc(50% - 20px);
   }
 }
-@media screen and (max-width: 566px) {
-  .my-project > div {
+@media screen and (max-width: 768px) {
+  .my-project .img-project-container {
     width: 100%;
   }
 }
@@ -808,6 +853,10 @@ header {
   }
 }
 
+.form-bg-dark {
+  background-color: #393E46 !important;
+}
+
 form {
   width: 45%;
   padding: 16px;
@@ -819,6 +868,7 @@ form {
   flex-wrap: wrap;
   gap: 5%;
   z-index: 1;
+  transition: background-color 0.8s;
 }
 form > * {
   text-transform: capitalize;
@@ -834,7 +884,6 @@ form > * {
 form > *:not(:last-child):focus {
   border-color: #FECF77;
   color: #495057;
-  background-color: #ffffff;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(255, 122, 87, 0.25);
 }
@@ -907,12 +956,13 @@ form .submit-input:hover {
   }
 }
 
-.form-bg-dark {
-  background-color: #393E46 !important;
+.focus-input {
+  color: #EEEEEE !important;
 }
 
 #footer {
   background-color: #f7f8f9;
+  transition: background-color 0.8s;
 }
 
 .footer {
@@ -955,4 +1005,8 @@ form .submit-input:hover {
 }
 .social-icon .social:hover {
   background: transparent;
+}
+
+.social-hover:hover {
+  color: #EEEEEE;
 }/*# sourceMappingURL=style.css.map */

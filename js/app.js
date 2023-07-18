@@ -1,69 +1,149 @@
+// .................start highlight nav menu
+let highlightNav = () => {
+  let sections = document.querySelectorAll("section");
+  let navLink = document.querySelectorAll(".navigation-list .navigation li a");
+  const menu = document.getElementById('dark-theme');
+
+  window.addEventListener("scroll", () => {
+    let currentSection = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (scrollY > sectionTop - sectionHeight / 3) {
+        currentSection = section.getAttribute("id");
+        menu.classList.add('box-shadow');
+      }
+    });
+
+    navLink.forEach((a) => {
+      a.classList.remove("active");
+
+      if (a.classList.contains(currentSection)) {
+        a.classList.add("active");
+      }
+    });
+    if (scrollY === 0){
+      menu.classList.remove('box-shadow');
+
+    }
+  });
+};
+
+highlightNav();
+// .................end highlight nav menu
+
+// .................start loading Animation
+
+// .................end loading Animation
+
 // .................start dark theme
 let darkBtn = document.getElementById("dark-btn");
 let btnDarkText = document.getElementById("btn-dark-text");
 let btnDarkIcon = document.getElementById("btn-dark-icon");
 let bgDark = document.getElementById("dark-theme");
-let textDark = document.querySelectorAll('li > a');
-let form = document.getElementById('form');
+let textDark = document.querySelectorAll("li > a");
+let darkTitleSkill = document.querySelectorAll(".title-skill");
+let form = document.getElementById("form");
+let footerBg = document.getElementById("footer");
+let hoverIconSocial = document.querySelectorAll(".social");
+let inputText = document.querySelectorAll(".input");
+let hireMeContent = document.querySelectorAll(".hire-me-content > *")
+let bgBurgerMenu = document.getElementsByClassName('navigation-list')[0];
 
 darkBtn.onclick = function () {
   document.body.classList.toggle("dark-theme");
 
   if (document.body.classList.contains("dark-theme")) {
-
     btnDarkIcon.src = "assets/sun.png";
     btnDarkText.innerHTML = "Light";
     bgDark.classList.add("dark-bg");
-    textDark.classList.add('dark-content');
-    form.classList.add('form-bg-dark');
-    
+    form.classList.add("form-bg-dark");
+    footerBg.classList.add("form-bg-dark");
+
+    textDark.forEach((a) => {
+      a.classList.add("dark-content");
+    });
+
+    darkTitleSkill.forEach((title) => {
+      title.classList.add("dark-color-title");
+    });
+
+    hoverIconSocial.forEach((icon) => {
+      icon.classList.add("social-hover");
+    });
+
+    inputText.forEach((input) => {
+      input.classList.add("focus-input");
+    });
+
+    hireMeContent.forEach ((text)=>{
+      text.classList.add('dark-color-title')
+    })
+
+    bgBurgerMenu.classList.add('bg-dark-menu');
   } else {
+
     btnDarkIcon.src = "assets/moon.png";
     btnDarkText.innerHTML = "Dark";
     bgDark.classList.remove("dark-bg");
+    form.classList.remove("form-bg-dark");
+    footerBg.classList.remove("form-bg-dark");
+
+    hoverIconSocial.forEach((icon) => {
+      icon.classList.remove("social-hover");
+    });
+
+    textDark.forEach((a) => {
+      a.classList.remove("dark-content");
+    });
+
+    inputText.forEach((input) => {
+      input.classList.remove("focus-input");
+    });
+    bgBurgerMenu.classList.remove('bg-dark-menu');
+
   }
 };
 // .................end dark theme
 
-
-// .................start loading Animation
-// window.addEventListener('load', () => {
-//   const loader = document.getElementById('container');
-// })
-// .................end loading Animation
-
 // .................start portfolio js
-
 const title = [
   {
     num: 1,
     sub: "grid",
     img: "assets/grid.jpg",
+    href: "https://github.com/mohadesefr/grid-style",
   },
   {
     num: 2,
     sub: "js",
     img: "assets/menu-js.jpg",
+    href: "https://github.com/mohadesefr/cafe-menu",
   },
   {
     num: 3,
     sub: "js",
     img: "assets/slider.jpg",
+    href: "https://github.com/mohadesefr/burger-menu-with-js",
   },
   {
     num: 4,
     sub: "sass",
     img: "assets/sass.jpg",
+    href: "https://github.com/mohadesefr/sass-project",
   },
   {
     num: 5,
     sub: "css",
     img: "assets/mianterm.jpg",
+    href: "https://github.com/mohadesefr/mid-term-",
   },
   {
-    num:6,
-    sub: 'bootstrap',
-    img: 'assets/fullstack.jpg',
+    num: 6,
+    sub: "bootstrap",
+    img: "assets/fullstack.jpg",
+    href: "https://github.com/mohadesefr/bootstrap",
   },
 ];
 
@@ -72,9 +152,9 @@ const addPicture = (imgOfTitle = []) => {
   document.getElementById("my-project").innerHTML = imgOfTitle
     .map(
       (image) =>
-        `<div>
+        `<a target="_blank" class="img-project-container" href="${image.href}">
   <img class="img-project" src="${image.img}" alt="" />
-</div>`
+</a>`
     )
     .join(" ");
 };

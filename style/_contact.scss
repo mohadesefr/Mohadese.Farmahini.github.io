@@ -45,6 +45,10 @@
     width: 100%;
   }
 }
+.form-bg-dark {
+  background-color: $secondary-color-dark-theme !important;
+}
+
 
 form {
   width: calc(50% - 5%);
@@ -53,7 +57,8 @@ form {
   @include row($justify: space-between);
   gap: 5%;
   z-index: 1;
-
+  transition: background-color $transition * 2;
+  
   & > * {
     text-transform: capitalize;
     font-size: $spacer * 2;
@@ -69,7 +74,6 @@ form {
   & > *:not(:last-child):focus {
     border-color: $primary-color;
     color: $text-dark-color;
-    background-color: $bg-color;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(255, 122, 87, 0.25);
   }
@@ -123,6 +127,6 @@ form {
   }
 }
 
-.form-bg-dark {
-  background-color: #393E46 !important;
+.focus-input {
+  color: $text-light-color !important;
 }

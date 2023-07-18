@@ -19,7 +19,7 @@
   @include icon($width: $spacer * 10, $height: $spacer * 10);
   margin-right: $spacer * 2;
 
-  .title-skil {
+  .title-skill {
     text-transform: uppercase;
 
     @media screen and (max-width: 425px) {
@@ -52,10 +52,13 @@
       width: 100%;
     }
   }
-  .progress-skil {
+  .progress-skill {
     text-transform: capitalize;
     @media screen and (max-width: 425px) {
       font-size: $spacer * 1.75;
     }
   }
+}
+.dark-color-title {
+  color: $secondary-color-dark-theme;
 }

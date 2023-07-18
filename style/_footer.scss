@@ -1,5 +1,6 @@
 #footer {
   background-color: #f7f8f9;
+  transition: background-color $transition * 2;
 }
 
 .footer {
@@ -11,8 +12,8 @@
     gap: $spacer * 2;
   }
 
-  .copyright{
-    text-align: center
+  .copyright {
+    text-align: center;
   }
 }
 
@@ -28,4 +29,8 @@
       background: transparent;
     }
   }
+}
+
+.social-hover:hover {
+  color: $text-light-color;
 }
