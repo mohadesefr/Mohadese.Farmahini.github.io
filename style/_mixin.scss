@@ -114,3 +114,9 @@
   grid-template-columns: repeat($col, $width);
   grid-gap: $gap;
 }
+
+
+@mixin pseudo ($content: '') {
+  position: absolute;
+  content: $content;
+}

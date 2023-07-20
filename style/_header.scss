@@ -28,7 +28,7 @@ header {
     text-transform: uppercase;
   }
 
-  .toggle-btn {
+  .toggle-btn-label {
     display: inline-block;
     width: 25px;
     height: 17px;
@@ -40,6 +40,8 @@ header {
     & > span {
       @include toggle_btn();
       top: 0;
+      transition: $transition;
+
     }
 
     &::before {
@@ -53,7 +55,7 @@ header {
       bottom: 0;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       display: none;
     }
   }
@@ -86,6 +88,11 @@ header {
 .dark-content {
   color: $text-light-color;
 }
+.dark-icon{
+  color:$text-dark-color;
+}
+
+
 #dark-btn {
   @include button();
   @include row($align: center);
@@ -101,6 +108,11 @@ header {
     // height: $spacer * 2;
     margin-left: auto;
   }
+}
+
+#burger-menu {
+  opacity: 0;
+  display: none;
 }
 
 @media (max-width: 1024px) {
@@ -119,10 +131,36 @@ header {
     box-shadow: 0 6px 15px rgba(206, 212, 218, 0.3);
     overflow-y: hidden;
   }
-  #burger-menu:checked + .navigation-list {
+  #burger-menu:checked ~ .navigation-list {
     height: 280px;
     transition: $transition;
+  }
+  #burger-menu:checked + .toggle-btn-label::before {
+    opacity: 0;
+  }
+  #burger-menu:checked + .toggle-btn-label > span {
+    transform: rotate(45deg) translate(6px, 10px);
+  }
+  #burger-menu:checked + .toggle-btn-label::after {
+    transform: rotate(-45deg) translateY(-5px);
+  }
 
+  .navigation-list::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: calc(100% - 344px);
+    background-color: #eeeeee88;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(100vh);
+    transition: transform $transition;
+
+  }
+  #burger-menu:checked ~ .navigation-list::after {
+    transform: translateY(0);
   }
 }
 
@@ -130,5 +168,5 @@ header {
   box-shadow: 0 6px 15px rgba(206, 212, 218, 0.3);
 }
 .bg-dark-menu {
-  background-color:$bg-dark-theme;
+  background-color: $bg-dark-theme;
 }

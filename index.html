@@ -13,18 +13,7 @@
 
   <body>
     <!-- start loading animation -->
-    <!-- <div id="container">
-      <div class="divider" aria-hidden="true"></div>
-      <p class="loading-text" aria-label="Loading">
-        <span class="letter" aria-hidden="true">L</span>
-        <span class="letter" aria-hidden="true">o</span>
-        <span class="letter" aria-hidden="true">a</span>
-        <span class="letter" aria-hidden="true">d</span>
-        <span class="letter" aria-hidden="true">i</span>
-        <span class="letter" aria-hidden="true">n</span>
-        <span class="letter" aria-hidden="true">g</span>
-      </p>
-    </div> -->
+    <div id="loading"></div>
     <!-- end loading animation -->
 
     <!-- start header -->
@@ -35,25 +24,33 @@
             <h3 id="logo">Mohiiixx</h3>
           </div>
 
-          <label for="burger-menu" class="toggle-btn"> <span></span></label>
           <input type="checkbox" id="burger-menu" />
+          <label for="burger-menu" class="toggle-btn-label">
+            <span></span
+          ></label>
 
           <nav class="navigation-list">
-            <ul class="navigation" >
-
-              <li ><a class="dark-text nav-link Home active" href="#Home">Home</a></li>
-              <li ><a class="nav-link About" href="#About">About</a></li>
-              <li ><a class="nav-link Resume" href="#Resume">Resume</a></li>
-              <li ><a class="nav-link Portfolio" href="#Portfolio">Portfolio</a></li>
-              <li ><a class="nav-link Testimonial" href="#Testimonial">Testimonial</a></li>
-              <li ><a class="nav-link Contact" href="#Contact">Contact</a></li>
+            <ul class="navigation">
+              <li>
+                <a class="dark-text nav-link Home active" href="#Home">Home</a>
+              </li>
+              <li><a class="nav-link About" href="#About">About</a></li>
+              <li><a class="nav-link Resume" href="#Resume">Resume</a></li>
+              <li>
+                <a class="nav-link Portfolio" href="#Portfolio">Portfolio</a>
+              </li>
+              <li>
+                <a class="nav-link Testimonial" href="#Testimonial"
+                  >Testimonial</a
+                >
+              </li>
+              <li><a class="nav-link Contact" href="#Contact">Contact</a></li>
 
               <div id="dark-btn">
                 <span id="btn-dark-text">Dark</span>
                 <img id="btn-dark-icon" src="assets/moon.png" alt="moon" />
               </div>
             </ul>
-           
           </nav>
         </div>
       </div>
@@ -62,7 +59,7 @@
       <section id="Home" class="hero">
         <div class="container hero-container">
           <div class="info-section">
-            <span class="subtitle">Hi every one, I'm</span>
+            <span class="subtitle">Hi every one, I’m</span>
             <h1 id="title">Mohadese Farmahini</h1>
 
             <div class="cursor">
@@ -71,16 +68,18 @@
             </div>
 
             <div class="hero-btn">
-              <button><a target="" href="https://www.linkedin.com/in/mohadese-farmahini-9359a51b5?originalSubdomain=ir">get in touch</a></button>
+              <button>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/mohadese-farmahini-9359a51b5?originalSubdomain=ir"
+                  >get in touch</a
+                >
+              </button>
             </div>
           </div>
 
           <div class="img-holder">
-            <img
-              class="img-hero"
-              src="assets/girl-2.jpeg"
-              alt="hero-img"
-            />
+            <img class="img-hero" src="assets/girl-2.jpeg" alt="hero-img" />
           </div>
         </div>
       </section>
@@ -104,8 +103,9 @@
             <div class="prof-info wow animate__animated animate__fadeInRight">
               <h3>Who Am I?</h3>
               <p class="about-text">
-                I'm Mohadese Farmahini, a front-end web developer. I've been
-                working for almost last 4 months.
+                I’m Mohadese Farmahini, a front-end web developer. I’ve been
+                working for almost last 4 months. I like to Living, learning, &
+                leveling up one day at a time.
               </p>
               <li>
                 <ul class="my-info">
@@ -138,8 +138,9 @@
       </section>
       <!-- end about section  -->
 
-      <!-- start 'what i do' section  -->
+      <!-- start resume section  -->
       <section id="Resume">
+        <!-- start 'what i do' section  -->
         <div class="container section">
           <div class="titles">
             <h2 class="section-title">What I Do</h2>
@@ -147,9 +148,12 @@
 
           <div>
             <p class="history-text animate__fadeInUp animate__animated wow">
-              here is what i've done in these years. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Porro doloribus eligendi, ex beatae
-              dolores inventore tempora voluptatibus ea opti!
+              Since beginning my journey as a front-end developer over 11 years
+              ago, I’ve done remote work for agencies, consulted for startups,
+              and collaborated with talented people to create digital products
+              for both business and consumer use. I’m quietly confident,
+              naturally curious, and perpetually working on improving my chops
+              one design problem at a time.
             </p>
 
             <div
@@ -158,7 +162,7 @@
               <div class="history-box">
                 <i class="las la-smile"></i>
                 <span>232</span>
-                <p>happy clients</p>
+                <p>Happy Clients</p>
               </div>
 
               <div class="history-box">
@@ -181,14 +185,18 @@
             </div>
           </div>
         </div>
+        <!-- end 'what i do' section  -->
 
+        <!-- start Skills section -->
         <div class="container section">
           <div class="titles">
             <h2 class="section-title">My Skills</h2>
           </div>
 
           <div class="progress-container">
-            <div class="title-container animate__animated animate__fadeInUp wow">
+            <div
+              class="title-container animate__animated animate__fadeInUp wow"
+            >
               <div>
                 <div class="title-logo">
                   <p class="title-skill">psd</p>
@@ -197,13 +205,15 @@
 
               <div class="progress">
                 <div class="progress-line">
-                  <div style="width: 70%"></div>
+                  <div style="width: 75%"></div>
                 </div>
                 <div class="progress-skill">adobe photoshop</div>
               </div>
             </div>
 
-            <div class="title-container animate__animated animate__fadeInUp wow">
+            <div
+              class="title-container animate__animated animate__fadeInUp wow"
+            >
               <div>
                 <div class="title-logo">
                   <p class="title-skill">html</p>
@@ -287,8 +297,9 @@
             </div>
           </div>
         </div>
+        <!-- end Skills section -->
       </section>
-      <!-- end 'what i do' section  -->
+      <!-- end resume section  -->
 
       <!-- start Portfolio section  -->
       <section id="Portfolio">
@@ -298,9 +309,10 @@
           </div>
 
           <p class="history-text animate__fadeInUp animate__animated wow">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            cupiditate facilis eius sequi illo assumenda ipsum praesentium
-            iusto.
+            I like to code things from scratch, and enjoy bringing ideas to life
+            in the browser.
+            <br />
+            Here are a few past design projects I’ve worked on.
           </p>
 
           <div
@@ -316,10 +328,14 @@
         <div class="container section">
           <div class="hire-me">
             <div class="hire-me-content">
-              <h4>Hire Me For Your Project</h4>
-              <p>i love chalenge and make a chngege</p>
+              <h4>Interested in working together?</h4>
+              <p>We should queue up a time to chat.</p>
             </div>
-            <button class="hire-me-btn">hire me!</button>
+            <button class="hire-me-btn">
+              <a target="_blank" href="http://t.me/haniashop98"
+                >Let's do this!</a
+              >
+            </button>
           </div>
         </div>
         <!-- end hire me section  -->
@@ -371,15 +387,29 @@
             <h2 class="section-title">Get In Touch With Me</h2>
           </div>
 
-          <div class="contact-container animate__fadeIn animate__animated wow animate__delay-1s">
+          <div
+            class="contact-container animate__fadeIn animate__animated wow animate__delay-1s"
+          >
             <div class="map-img">
               <img src="assets/map.png" alt="map" />
             </div>
 
             <form id="form" class="form">
-              <input class="name-input input" type="text" placeholder="your name" />
-              <input class="email-input input" type="text" placeholder="your Email" />
-              <input class="subject-input input" type="text" placeholder="subject" />
+              <input
+                class="name-input input"
+                type="text"
+                placeholder="your name"
+              />
+              <input
+                class="email-input input"
+                type="text"
+                placeholder="your Email"
+              />
+              <input
+                class="subject-input input"
+                type="text"
+                placeholder="subject"
+              />
               <textarea
                 name="contact-message"
                 class="message-input input"

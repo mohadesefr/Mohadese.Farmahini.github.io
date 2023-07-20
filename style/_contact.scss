@@ -118,7 +118,7 @@ form {
   }
 
   @media screen and (max-width: 992px) {
-    padding: 0 $spacer * 2;
+    padding:$spacer * 2  $spacer * 2;
     margin-bottom: $spacer * 5;
     width: 60%;
   }

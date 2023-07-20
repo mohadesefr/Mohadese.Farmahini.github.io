@@ -24,12 +24,10 @@
 
     @media screen and (max-width: 425px) {
       font-size: $spacer * 1.75;
-
     }
   }
   @media screen and (max-width: 425px) {
     @include icon($width: $spacer * 7, $height: $spacer * 7);
-
   }
 }
 
@@ -54,11 +52,14 @@
   }
   .progress-skill {
     text-transform: capitalize;
+
     @media screen and (max-width: 425px) {
       font-size: $spacer * 1.75;
     }
   }
 }
+
+// dark theme
 .dark-color-title {
   color: $secondary-color-dark-theme;
 }

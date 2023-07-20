@@ -2,7 +2,7 @@
 let highlightNav = () => {
   let sections = document.querySelectorAll("section");
   let navLink = document.querySelectorAll(".navigation-list .navigation li a");
-  const menu = document.getElementById('dark-theme');
+  const menu = document.getElementById("dark-theme");
 
   window.addEventListener("scroll", () => {
     let currentSection = "";
@@ -12,7 +12,7 @@ let highlightNav = () => {
       const sectionHeight = section.clientHeight;
       if (scrollY > sectionTop - sectionHeight / 3) {
         currentSection = section.getAttribute("id");
-        menu.classList.add('box-shadow');
+        menu.classList.add("box-shadow");
       }
     });
 
@@ -23,9 +23,8 @@ let highlightNav = () => {
         a.classList.add("active");
       }
     });
-    if (scrollY === 0){
-      menu.classList.remove('box-shadow');
-
+    if (scrollY === 0) {
+      menu.classList.remove("box-shadow");
     }
   });
 };
@@ -34,7 +33,36 @@ highlightNav();
 // .................end highlight nav menu
 
 // .................start loading Animation
+const loadingAnim = document.getElementById("loading");
+const sectionPart = document.querySelectorAll("section");
+const footer = document.getElementById("footer");
 
+loadingAnim.innerHTML = ` <div class="loading">
+<div id="container"  >
+  <div class="divider" aria-hidden="true"></div>
+  <p class="loading-text" aria-label="Loading">
+    <span class="letter" aria-hidden="true">L</span>
+    <span class="letter" aria-hidden="true">o</span>
+    <span class="letter" aria-hidden="true">a</span>
+    <span class="letter" aria-hidden="true">d</span>
+    <span class="letter" aria-hidden="true">i</span>
+    <span class="letter" aria-hidden="true">n</span>
+    <span class="letter" aria-hidden="true">g</span>
+  </p>
+  </div>
+</div>`;
+
+sectionPart.forEach((sec) => {
+  sec.classList.add("visibility");
+});
+footer.classList.add("visibility");
+setTimeout(() => {
+  loadingAnim.innerHTML = "";
+  footer.classList.remove("visibility");
+  sectionPart.forEach((sec) => {
+    sec.classList.remove("visibility");
+  });
+}, 3000);
 // .................end loading Animation
 
 // .................start dark theme
@@ -48,8 +76,9 @@ let form = document.getElementById("form");
 let footerBg = document.getElementById("footer");
 let hoverIconSocial = document.querySelectorAll(".social");
 let inputText = document.querySelectorAll(".input");
-let hireMeContent = document.querySelectorAll(".hire-me-content > *")
-let bgBurgerMenu = document.getElementsByClassName('navigation-list')[0];
+let hireMeContent = document.querySelectorAll(".hire-me-content > *");
+let bgBurgerMenu = document.getElementsByClassName("navigation-list")[0];
+let iconResume = document.querySelectorAll(".history-box > i");
 
 darkBtn.onclick = function () {
   document.body.classList.toggle("dark-theme");
@@ -77,13 +106,17 @@ darkBtn.onclick = function () {
       input.classList.add("focus-input");
     });
 
-    hireMeContent.forEach ((text)=>{
-      text.classList.add('dark-color-title')
-    })
+    hireMeContent.forEach((text) => {
+      text.classList.add("dark-color-title");
+    });
 
-    bgBurgerMenu.classList.add('bg-dark-menu');
+    bgBurgerMenu.classList.add("bg-dark-menu");
+
+    iconResume.forEach((icon) => {
+        icon.classList.add("dark-icon");
+      })
+      
   } else {
-
     btnDarkIcon.src = "assets/moon.png";
     btnDarkText.innerHTML = "Dark";
     bgDark.classList.remove("dark-bg");
@@ -101,8 +134,7 @@ darkBtn.onclick = function () {
     inputText.forEach((input) => {
       input.classList.remove("focus-input");
     });
-    bgBurgerMenu.classList.remove('bg-dark-menu');
-
+    bgBurgerMenu.classList.remove("bg-dark-menu");
   }
 };
 // .................end dark theme
@@ -152,8 +184,8 @@ const addPicture = (imgOfTitle = []) => {
   document.getElementById("my-project").innerHTML = imgOfTitle
     .map(
       (image) =>
-        `<a target="_blank" class="img-project-container" href="${image.href}">
-  <img class="img-project" src="${image.img}" alt="" />
+        `<a target="_blank" class="img-project-container " href="${image.href}">
+  <img class="img-project " src="${image.img}" alt="" />
 </a>`
     )
     .join(" ");
@@ -227,7 +259,7 @@ const clients = [
     name: "Sara Wilsson",
     position: "Designer",
     quote:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus explicabo.",
+      "It was a real pleasure to work with and we look forward to working with her again.",
   },
   {
     id: 2,
@@ -235,7 +267,7 @@ const clients = [
     name: "Jena Karlis",
     position: "Store Owner",
     quote:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus explicabo.",
+      "She’s definitely the kind of designer you can trust with a project from start to finish.",
   },
   {
     id: 3,
@@ -243,7 +275,7 @@ const clients = [
     name: "John Larson",
     position: "Entrepreneur",
     quote:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus explicabo.",
+      "She’s definitely the kind of designer you can trust with a project from start to finish.",
   },
   {
     id: 4,
@@ -251,7 +283,7 @@ const clients = [
     name: "Saul Goodman",
     position: "Ceo & Founder",
     quote:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus explicabo.",
+      "She’s definitely the kind of designer you can trust with a project from start to finish.",
   },
 ];
 
@@ -285,9 +317,7 @@ document.getElementById("next-slide").addEventListener("click", function () {
   }
 });
 
-document
-  .getElementById("Previous-slide")
-  .addEventListener("click", function () {
+document.getElementById("Previous-slide").addEventListener("click", function () {
     if (currentClient > 0) {
       currentClient--;
       setSlideData(currentClient);
