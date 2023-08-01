@@ -1074,7 +1074,7 @@ form > *:not(:last-child):focus {
   border-color: #FECF77;
   color: #495057;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(255, 122, 87, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(254, 207, 119, 0.5490196078);
 }
 form .name-input {
   width: 47.5%;

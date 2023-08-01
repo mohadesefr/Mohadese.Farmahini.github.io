@@ -1,3 +1,47 @@
+// .................start counter number of What I Do
+// const myExperience = [
+//   {
+//     id: 1,
+//     icon: "las la-smile",
+//     num: 232,
+//     text: "Happy Clients",
+//   },
+//   {
+//     id: 2,
+//     icon: "las la-file-code",
+//     num: 523,
+//     text: "Projects",
+//   },
+//   {
+//     id: 3,
+//     icon: "las la-headset",
+//     num: 1434,
+//     text: "Hours Of Support",
+//   },
+//   {
+//     id: 4,
+//     icon: "las la-award",
+//     num: 24,
+//     text: "Awards",
+//   },
+// ];
+
+
+// setTimeout(() => {
+//   let counters = setInterval(updated);
+//   let upTo = 0;
+//   function updated() {
+//     let countNum = document.getElementById("counter");
+//     countNum.innerHTML = ++upTo;
+//     if (upTo === 232) {
+//       clearInterval(counters);
+//     }
+//   }
+// }, 1000);
+
+// .................end counter number of What I Do
+
+
 // .................start highlight nav menu
 let highlightNav = () => {
   let sections = document.querySelectorAll("section");
@@ -79,6 +123,7 @@ let inputText = document.querySelectorAll(".input");
 let hireMeContent = document.querySelectorAll(".hire-me-content > *");
 let bgBurgerMenu = document.getElementsByClassName("navigation-list")[0];
 let iconResume = document.querySelectorAll(".history-box > i");
+let darkLink = document.querySelectorAll(".dark-link");
 
 darkBtn.onclick = function () {
   document.body.classList.toggle("dark-theme");
@@ -113,9 +158,11 @@ darkBtn.onclick = function () {
     bgBurgerMenu.classList.add("bg-dark-menu");
 
     iconResume.forEach((icon) => {
-        icon.classList.add("dark-icon");
-      })
-      
+      icon.classList.add("dark-icon");
+    });
+    darkLink.forEach((link) => {
+      link.classList.add("dark-theme");
+    });
   } else {
     btnDarkIcon.src = "assets/moon.png";
     btnDarkText.innerHTML = "Dark";
@@ -134,7 +181,12 @@ darkBtn.onclick = function () {
     inputText.forEach((input) => {
       input.classList.remove("focus-input");
     });
+
     bgBurgerMenu.classList.remove("bg-dark-menu");
+
+    darkLink.forEach((link) => {
+      link.classList.remove("dark-theme");
+    });
   }
 };
 // .................end dark theme
@@ -172,10 +224,10 @@ const title = [
     href: "https://github.com/mohadesefr/mid-term-",
   },
   {
-    num: 6,
-    sub: "bootstrap",
-    img: "assets/fullstack.jpg",
-    href: "https://github.com/mohadesefr/bootstrap",
+    // num: 6,
+    // sub: "bootstrap",
+    // img: "assets/fullstack.jpg",
+    // href: "https://github.com/mohadesefr/bootstrap",
   },
 ];
 
@@ -317,7 +369,9 @@ document.getElementById("next-slide").addEventListener("click", function () {
   }
 });
 
-document.getElementById("Previous-slide").addEventListener("click", function () {
+document
+  .getElementById("Previous-slide")
+  .addEventListener("click", function () {
     if (currentClient > 0) {
       currentClient--;
       setSlideData(currentClient);
